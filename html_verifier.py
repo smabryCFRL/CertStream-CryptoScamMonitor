@@ -8,8 +8,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # DYNAMIC DAILY LOGGING
 today = datetime.datetime.now().strftime("%Y-%m-%d")
-INPUT_FILE = f"/home/lild/scam_logs/targets_{today}.txt"
-OUTPUT_FILE = f"/home/lild/scam_logs/confirmed_{today}.txt"
+INPUT_FILE = f"/home/*/scam_logs/targets_{today}.txt"
+OUTPUT_FILE = f"/home/*/scam_logs/confirmed_{today}.txt"
+# Replace * with your local username
 
 # INTERSECTION DICTIONARIES
 CRYPTO_TERMS = ['bitcoin', 'usdt', 'ethereum', 'crypto', 'wallet address', 'deposit amount', 'withdraw']
