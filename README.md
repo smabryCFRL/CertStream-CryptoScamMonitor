@@ -118,7 +118,7 @@ crontab -e
 
 ## Log Management
 
-Your Raspberry Pi will now operate completely headless. Check your /home/lild/scam_logs/ directory daily for two files:
+Your Raspberry Pi will now operate completely headless. Check your /home/*/scam_logs/ directory daily for two files:
 
 `targets_YYYY-MM-DD.txt`: The raw suspicious domains caught by the WebSocket.
 
