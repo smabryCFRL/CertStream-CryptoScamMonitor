@@ -48,7 +48,7 @@ wget -O /home/*/go/bin/config.yaml [https://raw.githubusercontent.com/d-Rickyy-b
 sudo nano /etc/systemd/system/certstream.service
 ```
 
-**Paste the following:
+**Paste the following:**
 
 ```
 # replace * with your local username
