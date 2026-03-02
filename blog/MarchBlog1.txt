@@ -1,0 +1,13 @@
+Hello and thank you for reading my first ever blog related to this crypto investment scam busting journey. 
+
+Today is March 1st and I have successfully created a fully autonomous server that gets CT logs and returns them in a neat .txt file (which is what this repo
+is about) . I continue to make small tweaks to my scripts to improve the effiency . I also got a nice base going to this github repository you are looking at .
+As of 9:30pm I have collected 6,024 suspicious domains that will be verified by their html content on wether or not they are a scam site . I expect to have 
+collected 7000 suspicious domains today and returned 85 confirmed websites . 
+
+I am currently working on a script that uses microsoft playwright to speed up to process of collecting the wallet addresses . I'd say I will have an acceptable
+script by March 5th . 
+
+I flagged 30 websites as crypto scams to Intelligence for Good today as well as submitting > 90 crypto currency wallets. My most interesting find today was a 
+$109,000 XRP wallet . Here is the address and the tag, rGudfn6q2VCGbPYqJpAQ5cw97LiXDNMLsa - 2147487214 . Once again this aligns with my hypothesis that XRP
+wallets have a higher likelihood of containing vast amounts of money . 
