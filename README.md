@@ -4,6 +4,10 @@ An autonomous, headless threat intelligence pipeline built for the Raspberry Pi.
 
 By running a local CertStream server natively, this architecture completely bypasses third-party rate limits, API bans, and Cloudflare blocks.
 
+## Notes
+1. **The Blog**: Check out the blog to see my progress, interesting finds, and new ideas!
+2. **Log FIles**: I will try to upload the files I log for the day the day after I submit them to be flagged
+
 ## Architecture Flow
 
 1. **The Firehose (`certstream-server-go`):** Runs as a background `systemd` daemon, independently pulling raw SSL/TLS certificate registrations from Google and Let's Encrypt directly into the Pi's memory.
@@ -130,3 +134,6 @@ Your Raspberry Pi will now operate completely headless. Check your /home/*/scam_
 ## Disclaimer
 
 **This tool is built strictly for OSINT, threat intelligence, and defensive cybersecurity research. Do not use this pipeline to target or interact with infrastructure you do not have explicit permission to investigate.**
+
+## Contact
+To contact me DM bigddoesstuff#1145 on discord
