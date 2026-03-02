@@ -8,14 +8,15 @@ import datetime
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# --- DYNAMIC DAILY LOGGING ---
+# Daily logging | I have a cron job set to run at 11:50pm every night to run this script .
+# The time it takes for this script to complete is longer than 10 minutes so we subtract 
+# 6 hours from the time to ensure there are no errors with saving data to the wrong file .
 adjusted_time = datetime.datetime.now() - datetime.timedelta(hours=6)
 today = adjusted_time.strftime("%Y-%m-%d")
 INPUT_FILE = f"/home/*/scam_logs/targets_{today}.txt"
 OUTPUT_FILE = f"/home/*/scam_logs/confirmed_{today}.txt"
 
-# --- INTERSECTION DICTIONARIES ---
-# CREATE YOUR OWN KEYWORDS TO TRIGGER
+# Create your own keywords !
 CRYPTO_TERMS = ['bitcoin', 'crypto']
 HYIP_TERMS = ['daily roi', 'investment plan']
 
@@ -23,7 +24,6 @@ active_threats = []
 seen_urls = set()
 write_lock = threading.Lock()
 
-# --- OPTION B: PRE-LOAD PREVIOUSLY CONFIRMED ---
 if os.path.exists(OUTPUT_FILE):
     with open(OUTPUT_FILE, 'r') as f:
         # Adds already confirmed URLs to seen_urls so they are skipped instantly
@@ -47,7 +47,8 @@ def check_html_and_save(target):
             
             crypto_hits = sum(1 for term in CRYPTO_TERMS if term in html_body)
             hyip_hits = sum(1 for term in HYIP_TERMS if term in html_body)
-            
+
+            # the logic behing deciding which websites to return . edit this to get more or less returns .
             if crypto_hits >= 1 and hyip_hits >= 2:
                 print(f"[+] NEW SCAM CONFIRMED: {strict_url}")
                 with write_lock:
