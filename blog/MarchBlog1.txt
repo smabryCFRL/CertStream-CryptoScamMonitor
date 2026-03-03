@@ -16,3 +16,6 @@ March 2nd:
 Some performance work was done on March 2nd to reduce the CPU load . A consistent 98% is crazy ! this resulted in adding a tiny sleep function to the live_sniper.py script . I plan to alter the live_sniper.py and html_verifier scripts further making small optimizations like when im checking if a word exists in my lists 0(n) . I would simply instead change the lists to sets 0(1) . 
 
 I flagged 8 crytpo websites today to Intelligence for Good resulting in > 28 wallets being submitted .
+
+March 3rd:
+I am noticing many more suspicious domains being returned ever since I updated live_sniper.py with a sleep function
