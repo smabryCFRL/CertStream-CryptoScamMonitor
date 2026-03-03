@@ -18,8 +18,8 @@ today = adjusted_time.strftime("%Y-%m-%d")
 INPUT_FILE = f"/home/*/scam_logs/targets_{today}.txt"
 OUTPUT_FILE = f"/home/*/scam_logs/confirmed_{today}.txt"
 
-CRYPTO_TERMS = ['bitcoin', 'usdt', 'ethereum', 'crypto', 'wallet address', 'deposit amount', 'withdraw']
-HYIP_TERMS = ['daily roi', 'investment plan', 'standard plan', 'premium plan', 'daily return', 'silver plan', 'gold plan', 'mining plan', 'referral commission', 'minimum deposit', 'task center', 'frozen amount', 'recharge']
+CRYPTO_TERMS = ['bitcoin', 'usdt']
+HYIP_TERMS = ['daily roi', 'investment plan']
 
 active_threats = []
 seen_urls = set()
