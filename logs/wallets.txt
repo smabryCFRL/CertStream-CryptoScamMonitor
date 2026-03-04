@@ -910,70 +910,6 @@ btc - bc1qfpjap3rrwv459x5u684drjg5s4u3xgj89t0y4w
 https://bitbullpro.net/
 btc - 14K3tKiJnVrn2fvygu8kbVzx2AAGoTaxJu
 xrp - rP8VvqTDeMtC7Vmp85CVvqJ5BH1QF3yvj3 - 33596292
-eth - 
-0x35E6d3f844b3435B961e60A7bE3f3FC38842aB76 0x54E4379a4167F9A1eFdD716c7D401CfE7DefBf5E
-0x409ff36E15F6145EdEC6074FCEfCeA16A351F979 0x864500834CC0bACb4Ed357170208D514C9Bf72C8
-0xAB38F0a8AFCFE7e90125ebf289e831271BBe4f9B 0x8AaF1914810Ae57313F7D99D4feF5802B176BE4e
-0xBf4311651253fc303f19E0C1A4e67dd93E14b60f 0x590b0abB30Fc4Ad73DC2FD423fcd39bBA24AeF06
-0xb8C43816B5E688730E90e0dB9d8F8d91edb4746c 0x2E54F0b90bB0Fc404C7acd688DfCdC8EaE1609e2
-0xF39F4c9e785FcEA8a4dB413d8b81a4Dc48Cd2668 0xb5d9B3E976a0261b4E7a9cC8788d0053e091951a
-0x4Aa823e8B5669A590D14f8B43E59aeB635293eFd 0xf32eB7032A13A8975950ad62125D4c2a00611c37
-0xce7bCedBF103D8459D784634806D26922e5d1137 0xabBE634A7826C7079Ea2a5aBA1DF8cd092c86E69
-0x46125Bc2266a7d5A426d9BCdFB95Fe7363451699 0x9F0941fCdD5e35157E17C854ae06F007680d68B5
-0xE2ed7Ff3943aeF0Dd0803df17308b0Cd326C76BC 0xbB3e296A8f866B356117D63374306D1069b5fA5A
-0x367924f716B89999917A5705623F64eF9DE20e51 0x369b97cC929e9Bf49c39208c9E9A888bb1Fa3572
-0x2151A625d76791D13Dd226e3f1Fe38f85Ce3F76B 0x77e194A7A130C15f332aFf892092de2A99EF853F
-0xbAdcdc6a804603CBe1cC7DeEe6d578b2a5F3ff8c 0x9fD249C199524e4CEAfAEb09D68350CD145375a7
-0x8e1508Bbb9A4680270cc7e0D6a49Cb0B9a9ec28b 0x2aD78A27CAf83E8a5BE03146Fdc2240475716BB7
-ltc - ltc1q8cxgzukyf5n8me347v7d5j26mrhjw38sj8yfgm
-dash - Xycds6n4p6yPCGtdditS1ZLFdh2ayQX1Vu
-doge - D5tikUacBDwS1wr2jTWXA8uc8bCFqLMwha
-trx - 
-TNnrgFhaudnQQDkMo5h25zXUJSBARbtCr3 TCQkpBXHshVvJvJYzeB9TxiDTErdpJnYxr
-TWe6DeQBhg1PMRXHLXfHku1uKChznNqnLm TCWnrCKnL2FEe4ASLz5c9SQZxY1cUxajFK TRxyLXSjrYX2pdPNLWGrT7E9DhFxq2r84m THds673Pf2FJar6PGvtr2DRYdS1VM5T5UE TU3B3G4JGc44VvnpJP2utELKniJGKRWhKC THXKiTUhVbsAoS7Jjc1o4xeRavC5v896oY TNesAF6mzuvzqtgFden1qbxTxch7nToJdW TSmCNCQQ34txFXcFSA3dveoTHt6JbyxPmy 
-TPe4cZJcyj2ubCP9oGGJg7KLiBFxkkNriZ TE9j6tMTDMYvQ8sRriNoaQenrnBeNoDYo6 TJ5HTWcrYjUoj64xpv4c8LvAAbFgKatRAD TZB4orAGMZ6moxzN42eN2eSYZdo2jA8C5q
-TFvbcge9iKr85rNA2YrSaQ3fHoBAjenrXZ TNEY68NBNrwf7XBKekA9kmwkcwgSoQow4d
-TFNg4cxiiunLXzG58i3kUxguia1kuXPD4U TJN6RG8PWxeuBfaHCnfF9Q8tnHXfmxyyzd
-TNvSohYaDvoQHm8bHPzEvf1VmJyB2TCDyE TJAkhYXV3g23uN7XAaar8Zfa1r4YLQaWrq
-THDidJedEfmLyn4aq285XYpQF6cMaqk5JT TGYNf41KEjC6EFgiiFxtZiGyYtCua7kHic
-TNmKNLAH1gUAjAdayB9SBuYZQmjG1qAJN6 TC1R7rA9bmffb7zxLycHuSQpzxv3orSrXw
-TE4xswWMnXxZvz5hGrZmtWJb4kxjgkH8aR TXGhD9dq2NJY3gREP5fVwn4msuThSqm3Cx
-TUyyX4vpFENUxmRPwpm3SNaLwM5V5VTB9g TVqoq21CMp8gcpKBegcA8o58koiWfS1Fn2
-TVkEKkJZWzdCnFFXcs9ubBnd1eo4NKJyWG TSC3pYFPMgNQJkSTwMeBUkiuSfcpWRq5S4
-TAV1jdRt8rMqv9F6fgt5sZhk8Vba1VS4Ro TUKsCCMaE4SdHRBZFBUdu8JU6w3DbMkpBD
-TA3FFaRfMhipiCdHpuRSSuqHTknkFFcA7j TGxV9jcpVFi3n4UVsSbtt8WmvfGcrMvHMd
-TDBppWdx4nTq5Rj1Wvx17JMWHg71brhWqm TYinE52RM51gW4tGANKGVLTqvXe1BNXRgR
-TJjoQ4CvkPe5kWtHDe66FfhpEnKVqR53KZ TTPQY8JyXzMpiBjqGQqQHccwNFnWmT7D5N
-TRPKzJdugUenxo5T1EMhde2Haq5W9Td4xU TPMrF9Qg1amz6jBW1ybTox16XHyUNkGhzQ
-TBXEMkDYZPajvtFG1xke3v2bR2MJr9R7vi TLRRDUpKPX7ZFZe79aSVYxW4cXNowqh3ah
-TLbNiDT829Wp5nBthPJNqepguVirpuL3PH TNdU9xkrWxavPwzLNrmAT42SHKgRpaBraG
-TTAxoiquagbRKiXaHGWeXbk4HUNP5MDNxn TUuMHMKGCdznLNGu7MKpA1zFAVXuGTuzzX
-TUHaAohMX6GcfpQRPZSunyV3gRr4GoxWme TVUVX7bDaFsKzUBYUDfeErWSEU37BBu8vy
-TAnvA455vUB5yk2b2S9gSxVd8dyHCmnhgM TG1tnSue9NXFjeaZUVFXAwqPJLw6rT5hk3
-TFRZ2ha1Y4ddrE3QzHjBwBJb9d8nQGFoDc TYcbT7TnWQrQs7DFfyajjoJ8z6EPYDshvy
-TToNE1Pt6o5TshBzyuetQtbWRASQru39nC TPk63noNmzAgvBrCicZnqbTHe4F4FTKLLv
-TAtzngYy32LjpwFtaDGYabJic6YBER7PnA TVPLmHt47WA4v4F35KBJ54i9HYosQQ8pwr
-TLWqYDn27NEfPbeYPpoQTDjqo4SrfPFER9 TW9EQ49CQT6Lrkx2TAyUpKcYrbfm4iFPDH
-TWwm1Zzt3n1FgggRGjq9nN8KDYu7KsC7sF TXNZCf43Rq8cBMz7XWDY4BU68EweNsP7Ji
-TAKLwxdhnRnR34nsqerjQmHrUmfk8W6Grm TD1DHGWLz3PRT55ZVQKrMiBHBEJ4SZ9pjU
-TLi9kEtyujQpd8TvzXsAmgTFAjnCtKenT6 TUusCMxi4X8RSYLgcNdVv8etYpuaP25y7M TR9Ym3ubdPzNxwRML61DEoGto6LcLfjLnJ TU2XgCBWGQGcJFZe3YF8XQqQm3yVez48k5 TPxbED1omV8aLzJ3rzeizDZdcMEcG7ZY5H TVX94TGUX6KJFgEZBmL1P9DkatGQXJ5wEW
-TBg7RamWdrUUoEGKu8Hc9TFL4MvGVwf2nJ TMkrhcDLiitK5maZf2A5SLCy9pqQPQ7C9W 
-THynBsDTJr6pUtvYQzxPoFnPUWUv2oY2qx TLHMjRMYRnttt7NWhvSdDGM8PCh1ng7Biw
-TWPcimmWdt3ThfhmX9zEovCSGWddM43f5e TJqtrks3SGvFaLcbQWT48YHPzq4abAom9u 
-TXgy3uABoX6AaxsqkoWjW7vQTLX5KZmgkR TPDiqfFFGAFYBnSSFmCP6S8bAHzqk8LqyC
-TFc7EoqFkqGHWriGHKg4sm6HzhLo4jWkgM TUKU3LSwkAMHTZpfbDYMKArRnTHdhx1Gna
-TTY8PmXE1RAvitZ98SDXvQwfXEmocf6Dpn TQJSVmnu39pLa1JzYVof5LvRfbs1STGSJD
-TSVZkLfAwvF9wQbpVQwAYgrZQ5KEhL322k TMx9itgAeuhSkHYpvQZex6EENfcqQkzGwD
-TXFX7pKaoLnSaUo5Tn9nzmUp72hEsnMgLe TLkR7y7oHUcPDP4WPLggw5QGy34V56NFGH
-TKCQ2azoMoAUT7NMNEtZN3wHKcBVn9BDXV TC7ykLNyb8xbAys1Kbe2tnLkxzLRvuAKYW
-TQHkv7NmSgoxWmFHKk5daEb7SBLgY3tyjf TSWTmoAuu3G6Gy42LaJzfManGAiU6z6LGn
-THV1X29RdFcE58bdj87gGNwkxN4erAjbS5 TYVMzB87AVeAXr5GLAgKkxi4tL8xPNgU4Y
-TWDNWCVnoNpusgHEjwQ9qFbpCFqsXv2dvw TT2cCoDm5Ud1Pxwo9xFocU7UAVuBbXqcbd
-TJniFLuRetCM6JkxFe49g4aRPJ2BPFwSbb TW5XEzHUJ8yUUg3DPSDBz6ojaNq9rsq4r2
-TV8ABYVZFWoHBCJLSEpJWTdXsN6X3CKPTy TXGuhPRVZkhAAmcZvF2MjL8esSk7uBP2Zu
-TPXBLu5WZAMEqWoKYkCJ4xyEmXmxFia4nJ TJcmWrYxviawWZUs43BP5BUHN2H6XWqSq7
-TUKdmyTMjBsSfoXG7Sp1STZUX5ZjNh4ro7 TTq5RrSAbiGq5qG5gHiEtREmrANZPUrxmt
-TCdTfv4dwfBGJa1RFVGm1UKoG4VkMo1EzC TJE6F5rkKW9YZEXSxPXnH9Biz1fKV3dza9
 
 
 https://www.sypto.xyz/
@@ -1140,35 +1076,6 @@ https://coinultrainc.com/
 btc - 33EjzXTJPYpuUz41MQB24Efm3eQQsZc1tb
 eth - 0xF971197c3C14b298b25d10B4b05d4C0516CdEe0E
 ltc - MAGNr7GZyjR3V1GNeDBB4kXtbipYhf4M89
-
-
-https://dev.crypto-claw.io/
-trx - TCPvCgbVQ6CUPYAwGWmBarSHquvqAFP1oT TRxpBxMndsM8xcpN1i5xx3ikd3Ts53ju6P
-TTQ7W4ob2HbgJqsfFKTVAqwE5WYsyqG1E7 TKG1oAEZ5AHEEF38mLCLgJF2gi4opN2aTo
-TQeVv21pWgqtK42fk29BfQTrK9S3oQBALv TRdd6kSm8SgutTwZFq2Akqw7tqxrwuu2aw
-TFzCXcCQFGjBUkX2yxnQvv3iwv4UEueY9A TJ2B1HmZZougaWXWCG5WEy2MwawFxJYPAm
-TH6V4wAccccofBSoLV77tesF8qok9QnLLu TTnGkxo4wJFPfMszuPSYfSnFFLoN7fJSss
-TR7wxUygJ2Epm3ELXBkvvVcoqLooUpp5Fp TASS8Vea8nkRwZBYUej2S6PSuT9yybP8zN
-TQrLaJNmThZMPv4AAAQJ8bjX6Cd5giRXPo TZGfLKv3yLGqZnjCAxqJRurALknByRgaqB
-TUrZ4cuka2Rf2T24v8zKPfaphBG6ikZRdh TPLe4BmdKTBqPVLrMb4a6HYRD56box2H29
-btc - bc1qkkclf034vqkrjqjtjfjruqmnypla5vumxs8y3r bc1q6c9ru6x6myuw9k04t5rf4dvecsyavndv99p37r
-bc1q9965w8c7wp8vrnqthu367pelmum47uc7pysrxz bc1qqngrqg5nhsm0gxfucum60ehv0jd0w70ck8qn4l
-bc1qguea20mf2ufce9egm65fh7axfgjrqlgwzr3vfg bc1qljg0mu09u0xkvee3xf2smstsegjkqltca90fq7
-bc1qnusrevss3uryxw3v9sgfafxh6zkx03p4ztp6c6 bc1qveewmgll25d7l9v24wa2g27j7j7cdkx5v537pw
-bc1qv739ykhkwymajawpq3r8c0wn9gdfsjzke4qd2t bc1qxgxxgeewdv057j5qrj3ztm5zyxpkadnrxqmw2k 
-bc1q7d9hkvk4jt8lp4nxdy64w0hthuwg6tww6efm45 bc1qly6kvyln4zmt66nf6trcvyww4qkladkuckjt8y
-eth - 0xf1Bc0AF8628C1535671cC77CA9265B2d2aeE30F4 0xAeF5E9C8F62d681F395dC6c72ad36c420D71Ec01
-0x2E01BB53532Be9B2C243917D185395D507ce474C 0x730EB7E8305700987152c8De5434f703Ce032bA5
-0x8173BbB86fAd520Dad60401b7C91B52F6E71E262 0x214BB0BfC54Bc1a6cFAB99A5242540a4e4b5E7b1
-0x0d2027a143e1971F3E31Ff50476BA8d0C7e71CC3 0xAc51E92BE31c7D724C2B5Df2FC0A94b80Ca2d28a
-0xfa018aB83142bd9F3F2BED92F06022649F4bbc83 0x0fa49a5A293f59f83F59043F222D4dBabcbE0925
-0xA85b04350B153CdcD7B44a65E3b171b7Fa0B627B 0xCa8949bA6A2fa3342E6D001762ABA7C0af56E65f 
-0xE6dfc5d28570465a6Cd6aD46356C60F8B2Ad4208 0x1EF910D88e51Bb9C4a7424789400f5ea95BcDf22
-0x6fBa69F97551124B24ec8B2b2B3aF85FE165B0CC 0x39838d47634fF646E34D638a8998ad1aBBC19d7D
-0xB56040C463EA3f3EbD63e2719639a1439530fdc4 0x19Aa7824f8926fa5E460CfF6Ba643bFce0D21641
-0xBa2EaC99D39982AB67dcF3B9AF0C79d9E7bAd73A 0x1060f017cFA354317a19982dEe00C3e86d59b186
-0x5680c8655c3abE726Bf3A4B5b8F463865DCf914e 0x0810DAbf0A93792d61961a59CBFFfF1B33946b3A
-0x199aF97c8c3E80478652467EB99e508bbeAbBB06 0x8e6713A6B5Ff4666573D74C97A68fAc7234c7AfC
 
 
 https://prominentcapitals.com/
@@ -1451,5 +1358,287 @@ https://apexprimetrade.com/
 usdt.trc20 - TR3D8CzdLXP6kG5etmnV5dezuumUfbjp3r
 
 
+https://stockstraders.cc/
+btc - bc1q73evkhl0nkvc0ahnqv82vcujtja72fdkl05306
+usdt.trc20 - TT2xDjTBb3hghTAgZ9EtuvYCNy7BtjV6HM
+eth - 0xA5B937943005cc47Cb2b64FB53E10682f6E71175
+ltc - ltc1q4cwcxmrvc8aqqf5jatq3d4pr63h42vght927fp
+sol - AMWAHdYi7hJUKHDvgsHeDU8FAMmzDJGvLEHroJQmVWB6
+
+
+https://bitwealth-minersinvestment.com/
+btc - bc1qnnlr09xtg59zn6fveuhwfthd6d2p8z99pqyy7r
+eth - 0x2d1899731a52c8646341419098E9130bAc511d6e
+usdt.trc20 - TWjSg7mo26hhcwtbQVfTFfhmwCSPQBGX9x
+
+
+https://stockfixtrade-fx.top/
+btc - bc1qt6j5xqtlj3at35t9tzar6pdrulcp5my3rwyt99
+usdt.trc20 - THMZs9up4EA6K4hv9RcaN9BoiceCSBfaFr
+
+
+https://digitalminers.ltd/
+btc - 1JPmerx4B3PcBcSgQD7cKcHi1UmwyxM2ed
+eth - 0x089Bf8A705a6352dbf06b7de1A923eC6b35d7B8D
+usdt.trc20 - TGMfVoEJyfFwpZdGNbPfZgrTkNEgcwg7N3
+
+
+https://apexinvestments.pro/
+btc - 1PjRoaf2YL1HtVPNvMvmqxFESMTBSAEUDV
+eth - 0xB53bF46C189EAaC734f5e1425753a0847C49170d
+usdt.trc20 - TJayMQoNqhEWRz4CW7KZP9NAb2ZbGPdh3d
+
+
+https://assethub.live/
+sol - 5BQMY1HsmvkeEsHepaxXroZaQaFGfNstSWDYaatcHKMQ
+usdt.trc20 - TBTuJJKD9rBakrPDquS1tTWLbMgSdf6Loo
+ltc - LYWnUt1KwDRQd6CzdwSHR4ZpSBpcT9oBmR
+eth - 0xea8730d61c75fc6741805b546374e3ff0fd4a8b2
+btc - 16Hz3iT6UbJVSzDNuNWZdEnuihP9Ktm91E
+
+
+https://s9fxnetwork.com/
+btc - bc1qj5z5ee2m9gsdtl8yfexx0ugjj39y8e9algjrat
+eth - 0xDE5A8d486051Eb6ac4d8bb25C349eB55907c5bc4
+
+
+https://investrooo.kbf28.com/
+usdt.poly - 0xe95f26c3a422a15e82b448f1d0bdab1c17ac4f90
+
+
+https://primeassetsltd.com/
+btc - bc1p76zu5yp752qvc0p8h7dgkepdd9c2epks9fj97980fgdx2rkr0acsjr3d2f
+
+
+https://tradix.to/
+usdc - 0x66446C8e882cc32d1Eae393CEFCD4CEdDE7c77b4
+
+
+https://tradeyourcapitals.com/
+btc - 3KhoFujmy4fPETgjPrx3aBDbLWYaoWE3Pf
+ltc - MK8s5okDm9o6VYwxm4JWq1y7EeWZdDskLP
+trx - TEP8EMwZHVVXXfGoEXZ1Ghvcv3fwUVqpez
+
+
+https://www.aptrademiningltd.coindeskinc.com/
+usdt.trc20 - TDKig4GYcbHqA9z7iPJxAFL3LmL6ogjnJk
+btc - 1CD7dxg9NQMnhAFJi3mb7QiQYQmNbcaPjx
+eth - 0xece8fd7fb9691090e1d87b635fb2aa9876f29e77
+
+
+https://sunrisetrades.ltd/
+btc - 36vRn1a4RTbYGDsBzzaqHTusajpfWjBHVp
+usdt.trc20 - TGbpBj65VWmfyddbq6LTTTba9EpmXMxkNT
+
+
+https://havestortradeinvest.cc/
+usdt.trc20 - TMfnu2jfTqUa9wKYixuuwrDiZwzRAUJPbT
+eth - 0x1B6ef7C2EAc0D56928876c956961ECA3d8E1FB13
+ltc - ltc1qyy86y2yylhz25zwmun6cr83qrzr3uejpjhy5xn
+btc - bc1qhumj4p2wxr7e52k4lh28a5heu2ztw0pqf9cfum
+
+
+https://qfs-futurescapitalss.cc/
+btc - bc1qsrfcxz8rf043mjw92z9g794gpzhus0w9tuz9fv
+eth - 0x44925786e367010467beff50480b6b45001c4b10
+usdt.trc20 - TGFvwzvbpwMk2RkvZpbG41KN1Fs5FytnsS
+
+
+https://luxatradeglobal.com/
+btc - bc1qmwaklz2k9gn5w9esa2xkc9wsp5q27ssptyf4kq
+eth - 0x6084aD14ba06A6807E39fAe4bBeE50AbC0c4dc78
+usdt.trc20 - TH1rCSZByuovLi4n74cwrd3Hv7BsGj4tm3
+ltc - ltc1qdru7rl290zn55u9j84ns4svjdzhwfw8apws59v
+
+
+https://investortrade.top/
+
+
+https://www.cryptocoral-invest.com/
+btc - bc1qxtanxv4ynvyl2veukjdq5yxvrzw0fdedr3yu9u
+eth - 0x5425DA227eE9f633cC0080d17086B167f97d24fA
+usdt.trc20 - TSWmS1sP2gC44MZfXEy1WjxeW2GQjmGt7B
+
+
+https://sunnettrades.com.bitstreams.cloud/
+usdt.trc20 - TJGJvvRf4syUztusWZnC3HwURXdmgbemDP
+eth - 0x2b20E24589f1Cc83e0E689363a7401Aaa8cd6579
+btc - bc1qkm4z8qds3w7sdslrul9ez8aettja4z35ekm73a
+
+
+https://risecripts.com/
+btc - bc1qgnprw307nm8a2rjw7x9r9l6z3r5y4nqy6a70hh
+eth - 0x82Df3E4c9DaF1bef2599fb361991A4AA25A7e6F5
+usdt.trc20 - TTx7rdc1v8fsTEkAmgWc5Luouf42h1fBfc
+
+
+https://www.smartscoinvest.online/
+btc - bc1qjcd5xy69gn036hxph9vf4tkquk0qml6s2wnamf
+usdt.trc20 - TAo9fcMV8VxpBWP8Xqiou8FEFuqPHqcdRQ
+eth - 0x4b5038F39F49a60961532AB0ef74942C74A34f8C
+doge - DMpqS3kzBgDShC2cG1xiZ9D86u3ztovneF
+
+
+https://capitalglobalearning.com/
+usdt.trc20 - TKqDoh22egbmi6BBSYbLdgrZMQEjS8uBQr
+usdt.bep20 - 0x653c49A6f416c43253865f9A43B3aAaAAc17A2e7
+btc - bc1qqkx8n3p4cz5lcsvrzc4a4f5husz9v8u0265k97
+
+
+https://cryptoapex-invest.com/
+btc - bc1qr62l6fdxp5gcdt7y49xavf0h78rqlakyxsr99r
+eth - 0xed5ead7dd1d50d2627af2ce1ccada32cb6604226
+usdt.trc20 - TT7Utwvynfv2F2ACZ5qRWobFrfeiwPZo4T
+
+
+https://app.crystaleliteinvestments.com/
+usdt.erc20 - 0x628Fd94e880308e0fF92EFFb69591AAD3c660ecd
+btc - bc1qqpswhw6nm5g5rflj8dafqr4960uzylsnqun40e
+
+
+https://digitalcointrades.com/
+btc - bc1qh7440wcrs20mth2eqca30unyn0zg0jfvgsvtyz
+eth - 0x96fE1d464eDD44f65FD6012a7497673De924FF37
+usdt.trc20 - TQgQSrNFd6udGTFCm96wTM8T8BJMV1QKsP
+
+
+https://cryptoelite-investment.com/
+btc - 1FuqgfH98UhntxoC5g8iyxAis3UwLHSTwd
+eth - 0xae444001ae843a3ef6612c3755ebaf97b009a586
+usdt.trc20 - TLsF316HUbaksYZmVnb2ETaGszCy56AMxH
+
+
+https://exchangecapitaltrade.com/
+btc - bc1q6uzu3kpmgkvy6neh0lzg9ptryez8pcg0hzh273
+eth - 0xc2a0326ba8B86E5Be07E501430ABe03b353377A0
+usdt.trc20 - TZ62cwPx6DNKkHhjgW3YafJ5L8Wn45jecV
+
+
+https://coinfirmtrades.com/
+btc - bc1q8wuy7sf0ypumuvt7vaxh09gkhty7e2lg6zp889
+eth - 0x02649aD4807d55a8fDF214B9Bd14F4891561453d
+btc.cash - qpp5t5ws3wd4j45xlfysd6krac48yy4u8ugekx7sxa
+usdt.trc20 - TJFR1pzLXetn3Cym5EQzQwuiJEpN2oNxFy
+doge - D59WfxBocVcmx2yRcmRrCiX18XoQRHkDz2
+
+
+https://digitalcoin-invests.com/
+btc - bc1qnhmgke52gmytz898vfgwu7hajhtqeglp92zxl7
+eth - 0x15110D4e0ECC595aB88e813e11aFc6bb20781083
+usdt.trc20 - TAGh94Mf9ya6FX7BKeF2T7wFFC6b1zBMFk
+
+
+https://bitspininvest.org/
+btc - bc1q046gsfa5dwkuz69d7j6ws6rsaywm0sj7atxng4
+eth - 0x6c45881AFE21a5e265AFa92A7720B9b3E573D726
+btc.cash - qpk8u5zjayzpwym9fwkgdpyhs7w7d35g2yahn05ef5
+usdt.trc20 - TDa8HifDT2SxtFKLfVkt9Zh9yf2fK1xDD5
+usdt.erc20 - 0xb30d9f55ffEFafaa7508f03c75f44471fA47d29e
+
+
+https://eliteproinvestment.com/
+btc - bc1qg20gm30cy3p90rg586pw5ff6dr0y7ul36yd5sp
+eth - 0x93b3d10F22d392C9C466a6B0aD1A0a3727aC96A8
+
+
+https://fundrisefxinvestment.online/
+btc - bc1qn65yk5ey44awhan8xeq2frz2yg3507k6j5pm64
+usdt.trc20 - TCAcRFTkxczJhiVuVrHSHUxPFjoYqDhubq
+
+
+https://invest.global-binary.com/
+btc - bc1qgwkh4unfgrt723fn6mhwmltnymkykmh754tp89
+bnb - 0x600168ddd35621b744fc79501a7c7b3af3ece689
+usdt.erc20 - 0x83d354eB06b8A6987dAF7bdd0d63929232D072eb
+usdt.trc20 - TWLuvnzjCRDPHa38NJXAybVz4mpryyh9MD
+usdt.trc20 - TXJ5Ec62rUn9ZtQV1C9FLQqTUyzeQkdgYx
+
+
+https://blockcryptotrade.com/
+btc - bc1qvmddhr6tu89wjjl5ykdt8arshjm0h3g6z7689e
+usdt.bep20 - 0x0AB07C737A9BE9D3125555C8d8742205296b01f7
+
+
+https://certifiedtradehubs.live/
+btc - bc1qwq3gj2hju07fr6rvkx04vhllp68lq8kjj24nsa
+
+
+https://prominentcapitals.net/
+bnb - 0x3d02820b57E99Dbc9A61391950232687de26f0f6
+btc - bc1qu64ju0xvgg59z4dydk9ppaycgx3lwqx5penywa
+
+
+https://capitalltdinvest.com/
+
+
+https://appex-capitaltrade.world/
+usdt.trc20 - TL2siRzAP2ZWz6zFjcr7cbiqHHtFVExiCS
+doge - D7nkiHHeA9Y5DHTvjKBeVDLm1Lrbu5UTZy
+ltc - ltc1qdcwak8sv5krdjhs7qep88sdvnc9a47lcn3eqrl
+btc - bc1q8v6perahsc596xdaen8yumgxg2zh94cqn253zj
+eth - 0xCd9a08Bd3158b40d5faD63a5aAb58FFEf146D15b
+bnb - 0x7ef50dDa81887D4D65d87aa502729F469091fe68
+ada - addr1q89h877rcavy32fycskp8l2p8n9elgmkc6a3ku6ca2xlgtee579hamzhvh4gqac4kamd8j5unyjceeqnwr27y8vc7whs0v9ae4
+sol - D6RpMZMDZguxFa9fNidXxvQCCavBVpn8NLETQYhmnvfC
+
+
+https://reliablefundsinvestmentsolution.com/
+btc - 1D6ys5ngMsanqGYWrWgurZ9eqoRMGrW2XQ
+usdt.trc20 - TSsxxMmS5uWSYgBb96AA5jWbJCJJ3i3Mo5
+
+
+https://nesaragesara-profitpayout.com.praemiumcapital.com/
+ltc - ltc1qwqhjwpftqlsqjjgnwu4xun0889stytl7dscx4u
+btc.cash - qppe0kadestwvhnf3d5rw7pmr6wsk95a4uzu7vgs4y
+ada - addr1q8a3uueh9n6nhup45ehe35u5n77z7du3ftdugvurvzsn32lfjr3xstwg4z8vmrkyvva0rt34revald4kmsjzjvmrrygqpvgkxc
+doge - DLF1jguqJpGGxtoTC9eRc9ED6cFXmmA4Hv
+sol - 51iKD9psB47iM1n7mwsavKDMgj6Xt2DwjAFRoRixa4pP
+bnb - 0xD8B9fcc62639910e2CFF672Fa72A31faF6e6A7C0
+usdt.trc20 - TYgQCmGQqahgQVQ8hpy4Rb8neLz3y8N8G5
+btc - 17f5t4sRNCup1vf5nXX6bPoegmdm6k68YS
+
+
+https://tradecapital.pro/
+usdt.trc20 - TJMYC2v1YrQnVZq6oEKexjEDtp9zGH5tDF
+btc - bc1q2g3u008v6ujrr6w9exn4fnmrm6ghx0v4jlphxl
+usdt.bep20 - 0xFc1Dbc1095D74bad2697175BF7fc0B73a0D79E33
+ltc - ltc1q2g3u008v6ujrr6w9exn4fnmrm6ghx0v4krmn70
+
+
+https://globaltraderoptions.com/
+btc - bc1qkxklrvcehga6nkeakn8fgxnx34a85m85h0vtjt
+
+
+https://bitmining.ltd/
+trx - TG2NR3DcrEPD76a5cgoXww9pQWq42jwxmD
+doge - DCoaLzosCTF6WYFZi7HYSdTKFjNzLmALqC
+eth - 0x80a82B9Aba0e7dC413414ada71F91885278EF2BC
+btc - bc1qv8enehn9tljh3pktdrvtu6x7vm2ej78hfw0p7v
+
+
 ****************************** GET WALLETS ******************************
+
+
+https://cryptoinvestora.com/
+NOW PAYMENTS
+
+
+https://investortrade.top/
+
+
+https://usdtexchnage.24trade.shop/
+
+
+https://profitsoncapital.com/
+
+
+https://www.cryptotrusttrades.net/
+
+
+https://superusdt.top
+
+
+https://accesscryptotrader.us/
+
+
 *********************** NOT SUBMITTED TO FORM YET ***********************
