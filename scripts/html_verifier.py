@@ -18,8 +18,8 @@ OUTPUT_FILE = f"/home/*/scam_logs/confirmed_{today}.txt"
 
 # using Regex is better than for loopsfor keyword detection in most cases
 # since it compiles to C and runs in 0(n) time - \b ensures we only match whole words
-CRYPTO_REGEX = re.compile(r'\b(bitcoin|usdt|ethereum|crypto|wallet address|deposit amount|withdraw)\b')
-HYIP_REGEX = re.compile(r'\b(daily roi|investment plan|standard plan|premium plan|daily return|silver plan|gold plan|mining plan|referral commission|minimum deposit|task center|frozen amount|recharge)\b')
+CRYPTO_REGEX = re.compile(r'\b(bitcoin|usdt)\b')
+HYIP_REGEX = re.compile(r'\b(daily roi|investment plan)\b')
 
 active_threats = []
 seen_urls = set()
