@@ -38,7 +38,7 @@ chmod +x /home/*/go/bin/certstream-server-go
 
 ```
 # replace * with your local username
-wget -O /home/*/go/bin/config.yaml [https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml](https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml)
+wget -O /home/*/go/bin/config.yaml [https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml] https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml
 ```
 
 
