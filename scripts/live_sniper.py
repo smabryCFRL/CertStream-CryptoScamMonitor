@@ -10,12 +10,12 @@ CERTSTREAM_URL = "ws://127.0.0.1:8080/"
 
 # using Regex is better than for loopsfor keyword detection in most cases
 # since it compiles to C and runs in 0(n) time
-CRYPTO_REGEX = re.compile(r'(crypto|btc|eth|usdt|coin|bit|hash|token)')
-ACTION_REGEX = re.compile(r'(invest|earn|profit|mine|mining|yield|roi|trade|double)')
-TRUST_REGEX  = re.compile(r'(legit|elite|global|capital|wealth|fund|prime|secure)')
+CRYPTO_REGEX = re.compile(r'(crypto)')
+ACTION_REGEX = re.compile(r'(invest)')
+TRUST_REGEX  = re.compile(r'(legit)')
 
 # tuples are better than lists and the .endswith() method accepts tuples
-HIGH_RISK_TLDS = ('.top', '.vip', '.cc', '.ltd', '.pro', '.live')
+HIGH_RISK_TLDS = ('.top')
 
 cert_count = 0
 seen_urls = set()
