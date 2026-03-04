@@ -80,28 +80,50 @@ sudo systemctl start certstream
 
 **1. Install Python requirements and Tmux:**
 
-```
-sudo apt update && sudo apt install tmux python3-pip -y
-pip3 install websocket-client requests --break-system-packages
+```bash
+# replace * with your local username
+sudo apt update && sudo apt install tmux python3-pip python3-venv -y
+cd /home/*/CertStream-CryptoScamMonitor
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 **2. Create the data directory:**
 
-#### This is where the automated scripts will save the daily target and confirmed scam lists (replace * with your local username)
+This is where the automated scripts will save the daily target and confirmed scam lists.
 
-```
+```bash
+# replace * with your local username
 mkdir /home/*/scam_logs
 ```
 
-**3. Clone the repository and configure scripts:**
+**3. Configure the proxy:**
 
-Look through the code for `live_sniper.py` and `html_verifier` for any configuration changes
+The HTML verifier routes all requests through a residential proxy to avoid exposing your Pi's IP to scam domains. Copy the example and fill in your proxy details:
 
-**Phase 3: Autonomous Execution**
+```bash
+cp .env.example .env
+nano .env
+```
+
+Set your proxy host and port (IP must be whitelisted on the provider's dashboard):
 
 ```
+PROXY_HOST=gate.your-proxy-provider.com
+PROXY_PORT=10001
+```
+
+**4. Configure scripts:**
+
+Look through the code for `live_sniper.py` and `html_verifier.py` for any path changes (replace `*` with your local username).
+
+### Phase 3: Autonomous Execution
+
+```bash
+source .venv/bin/activate
 tmux new -s sniper
-python3 live_sniper.py
+python3 scripts/live_sniper.py
 ```
 
 **IMPORTANT**
@@ -114,13 +136,13 @@ When you want to detach the feed of all the domains being detected **only use th
 
 This command sets the verifier to run automatically at 11:50 PM every night to scan the day's catches.
 
-```
+```bash
 crontab -e
 
 # Add this line to the very bottom on a new line without a # in front of it
 # replace * with your local username
 
-50 23 * * * /usr/bin/python3 /home/*/html_verifier.py >> /home/*/scam_logs/verifier_cron.log 2>&1
+50 23 * * * /home/*/CertStream-CryptoScamMonitor/.venv/bin/python /home/*/CertStream-CryptoScamMonitor/scripts/html_verifier.py >> /home/*/scam_logs/verifier_cron.log 2>&1
 ```
 
 ## Log Management

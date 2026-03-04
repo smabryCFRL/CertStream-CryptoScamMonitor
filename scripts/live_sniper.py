@@ -8,14 +8,15 @@ import re
 CERTSTREAM_URL = "ws://127.0.0.1:8080/"
 
 
-# using Regex is better than for loopsfor keyword detection in most cases
-# since it compiles to C and runs in 0(n) time
-CRYPTO_REGEX = re.compile(r'(crypto)')
-ACTION_REGEX = re.compile(r'(invest)')
-TRUST_REGEX  = re.compile(r'(legit)')
+# using Regex is better than for loops for keyword detection in most cases
+# since it compiles to C and runs in O(n) time
+CRYPTO_REGEX = re.compile(r'(crypto|bitcoin|btc|eth|usdt|tether|mining|defi|staking|nft|coin|wallet|token|hash|miner)')
+ACTION_REGEX = re.compile(r'(invest|trade|trading|profit|earn|yield|stake|swap|exchange|capital|fund|fx|option|market|broker|asset|prime|apex|global|wealth)')
+TRUST_REGEX  = re.compile(r'(legit|secure|trust|official|verified|real|guarantee|guaranteed)')
 
 # tuples are better than lists and the .endswith() method accepts tuples
-HIGH_RISK_TLDS = ('.top')
+# TLDs only trigger when combined with at least one keyword match (see is_highly_suspicious)
+HIGH_RISK_TLDS = ('.top', '.xyz', '.live', '.pro', '.click', '.vip', '.icu', '.buzz', '.site', '.ltd', '.trade', '.online', '.cc', '.sbs', '.cloud')
 
 cert_count = 0
 seen_urls = set()
@@ -67,7 +68,8 @@ def on_message(ws, message):
                     
         # zzz
         time.sleep(0.001) 
-    except Exception: pass
+    except Exception as e:
+        print(f"\n[-] Error processing message: {e}", flush=True)
 
 def on_error(ws, error): print(f"\n[-] ERROR: {error}")
 def on_close(ws, close_status_code, close_msg): print("\n[-] Connection closed.")
