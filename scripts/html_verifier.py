@@ -136,6 +136,7 @@ JS_SHELL_INDICATORS = re.compile(
 
 def check_html_and_save(target):
     global sites_reached, sites_alive, api_errors, empty_html, js_shell_only
+    global has_crypto, has_hyip, has_roi_plan, has_scam_action, has_structure
     global has_crypto, has_hyip, has_structure
     strict_url = normalize_url(target)
     if strict_url in seen_urls:
