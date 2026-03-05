@@ -68,6 +68,13 @@ seen_urls = set()
 write_lock = threading.Lock()
 sites_reached = 0
 sites_alive = 0
+api_errors = 0
+empty_html = 0
+js_shell_only = 0
+has_crypto = 0
+has_hyip = 0
+has_structure = 0
+near_misses = []
 
 # preload files into memory to avoid re-reading the same file multiple times during execution
 if os.path.exists(OUTPUT_FILE):
@@ -98,8 +105,15 @@ def is_host_alive(host, port=443, timeout=3):
         return False
 
 
+JS_SHELL_INDICATORS = re.compile(
+    r"(loading\.\.\.|加载中|<noscript>|__next_f|__nuxt|react-root|ng-app|app-root)",
+    re.IGNORECASE,
+)
+
+
 def check_html_and_save(target):
-    global sites_reached, sites_alive
+    global sites_reached, sites_alive, api_errors, empty_html, js_shell_only
+    global has_crypto, has_hyip, has_structure
     strict_url = normalize_url(target)
     if strict_url in seen_urls:
         return
@@ -124,21 +138,37 @@ def check_html_and_save(target):
         sites_reached += 1
 
         if response.status_code != 200:
-            print(f"[-] API error {response.status_code} for {strict_url}", flush=True)
+            api_errors += 1
             return
 
         data = response.json()
         results = data.get("results", [])
         if not results:
+            empty_html += 1
             return
 
         html_body = results[0].get("content", "").lower()
-        if not html_body:
+        if not html_body or len(html_body) < 200:
+            empty_html += 1
+            return
+
+        # detect JS-only shells (SPA sites that need rendering)
+        visible_text = re.sub(r"<script[^>]*>.*?</script>", "", html_body, flags=re.DOTALL)
+        visible_text = re.sub(r"<[^>]+>", "", visible_text).strip()
+        if len(visible_text) < 100 and JS_SHELL_INDICATORS.search(html_body):
+            js_shell_only += 1
             return
 
         crypto_hits = len(set(CRYPTO_REGEX.findall(html_body)))
         hyip_hits = len(set(HYIP_REGEX.findall(html_body)))
         structure_hits = len(set(SCAM_STRUCTURE_REGEX.findall(html_body)))
+
+        if crypto_hits:
+            has_crypto += 1
+        if hyip_hits:
+            has_hyip += 1
+        if structure_hits:
+            has_structure += 1
 
         # check <title> — crypto + HYIP in the title is very high confidence
         title_match = re.search(
@@ -164,6 +194,11 @@ def check_html_and_save(target):
                     file.write(f"{strict_url}\n")
                 active_threats.append(strict_url)
                 seen_urls.add(strict_url)
+        elif crypto_hits >= 1 or hyip_hits >= 1:
+            with write_lock:
+                near_misses.append(
+                    f"  {strict_url} (crypto={crypto_hits} hyip={hyip_hits} struct={structure_hits})"
+                )
 
     except requests.RequestException as e:
         print(f"[-] {strict_url}: {e}", flush=True)
@@ -194,18 +229,41 @@ if __name__ == "__main__":
                     print(f"[!!!] Worker thread crashed: {e}", flush=True)
 
         dead = len(new_targets) - sites_alive
-        print(
-            f"\n[*] Alive: {sites_alive} | Dead: {dead} | API calls used: {sites_reached}"
-        )
-        print(f"[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}.")
+        analyzed = sites_reached - api_errors - empty_html - js_shell_only
 
-        if sites_reached > 0:
-            hit_rate = (len(active_threats) / sites_reached) * 100
-            print(
-                f"[*] Hit Rate (of API calls): {hit_rate:.2f}% ({len(active_threats)}/{sites_reached})"
-            )
+        print(f"\n{'='*50}")
+        print(f"  SCAN RESULTS — {today}")
+        print(f"{'='*50}")
+        print(f"  Total targets:     {len(new_targets)}")
+        print(f"  TCP alive:         {sites_alive}")
+        print(f"  TCP dead:          {dead}")
+        print(f"{'='*50}")
+        print(f"  API calls made:    {sites_reached}")
+        print(f"  API errors (4xx):  {api_errors}")
+        print(f"  Empty/no HTML:     {empty_html}")
+        print(f"  JS shell only:     {js_shell_only}")
+        print(f"  Fully analyzed:    {analyzed}")
+        print(f"{'='*50}")
+        print(f"  Had crypto keywords: {has_crypto}")
+        print(f"  Had HYIP phrases:    {has_hyip}")
+        print(f"  Had structure sigs:  {has_structure}")
+        print(f"  CONFIRMED SCAMS:     {len(active_threats)}")
+        print(f"{'='*50}")
+
+        if analyzed > 0:
+            hit_rate = (len(active_threats) / analyzed) * 100
+            print(f"  Hit Rate (of analyzed): {hit_rate:.2f}% ({len(active_threats)}/{analyzed})")
         else:
-            print("[*] Hit Rate: N/A (0 sites reached)")
+            print("  Hit Rate: N/A (0 sites analyzed)")
+
+        if near_misses:
+            print(f"\n[*] Near misses ({len(near_misses)} sites had partial matches):")
+            for nm in near_misses[:20]:
+                print(nm)
+            if len(near_misses) > 20:
+                print(f"  ... and {len(near_misses) - 20} more")
+
+        print(f"\n[+] Output: {OUTPUT_FILE}")
 
     except KeyboardInterrupt:
         print("\n[*] Interrupted by user. Exiting.")
