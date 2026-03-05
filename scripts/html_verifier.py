@@ -194,10 +194,10 @@ if __name__ == "__main__":
                     print(f"[!!!] Worker thread crashed: {e}", flush=True)
 
         dead = len(new_targets) - sites_alive
-        print(f"\n[*] Alive: {sites_alive} | Dead: {dead} | API calls used: {sites_reached}")
         print(
-            f"[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}."
+            f"\n[*] Alive: {sites_alive} | Dead: {dead} | API calls used: {sites_reached}"
         )
+        print(f"[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}.")
 
         if sites_reached > 0:
             hit_rate = (len(active_threats) / sites_reached) * 100
