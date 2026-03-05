@@ -28,18 +28,16 @@ By running a local CertStream server natively, this architecture completely bypa
 Instead of relying on public APIs, we download and run the pre-compiled CertStream Go binary.
 
 **1. Create the directory and download the binary:**
-```
-# replace * with your local username
-mkdir -p /home/*/go/bin/
-wget -O /home/*/go/bin/certstream-server-go https://github.com/d-Rickyy-b/certstream-server-go/releases/download/v1.8.2/certstream-server-go_1.8.2_linux_arm64
-chmod +x /home/*/go/bin/certstream-server-go
+```bash
+mkdir -p ~/go/bin/
+wget -O ~/go/bin/certstream-server-go https://github.com/d-Rickyy-b/certstream-server-go/releases/download/v1.8.2/certstream-server-go_1.8.2_linux_arm64
+chmod +x ~/go/bin/certstream-server-go
 ```
 
 **2. Download the default configuration file:**
 
-```
-# replace * with your local username
-wget -O /home/*/go/bin/config.yaml https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml
+```bash
+wget -O ~/go/bin/config.yaml https://raw.githubusercontent.com/d-Rickyy-b/certstream-server-go/master/config.sample.yaml
 ```
 
 
@@ -52,22 +50,23 @@ sudo nano /etc/systemd/system/certstream.service
 **Paste the following:**
 
 ```
-# replace * with your local username
 [Unit]
 Description=CertStream God Mode Server
 After=network.target
 
 [Service]
 Type=simple
-User=*
-WorkingDirectory=/home/*/go/bin/
+User=%i
+WorkingDirectory=/home/%i/go/bin/
 Restart=always
 RestartSec=5
-ExecStart=/home/*/go/bin/certstream-server-go
+ExecStart=/home/%i/go/bin/certstream-server-go
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+> **Note:** Replace `%i` with your actual Linux username (e.g., `pisniper`). Systemd does not expand `~` or `$USER`.
 
 **4. Enable and start the firehose:**
 
@@ -82,24 +81,14 @@ sudo systemctl start certstream
 **1. Install Python requirements and Tmux:**
 
 ```bash
-# replace * with your local username
 sudo apt update && sudo apt install tmux python3-pip python3-venv -y
-cd /home/*/CertStream-CryptoScamMonitor
+cd ~/CertStream-CryptoScamMonitor
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**2. Create the data directory:**
-
-This is where the automated scripts will save the daily target and confirmed scam lists.
-
-```bash
-# replace * with your local username
-mkdir /home/*/scam_logs
-```
-
-**3. Configure the proxy:**
+**2. Configure the proxy:**
 
 The HTML verifier routes all requests through a residential proxy to avoid exposing your Pi's IP to scam domains. Note: only `html_verifier.py` uses the proxy — `live_sniper.py` connects to the local CertStream server and does not require proxy configuration.
 
@@ -117,9 +106,7 @@ PROXY_HOST=gate.your-proxy-provider.com
 PROXY_PORT=10001
 ```
 
-**4. Configure scripts:**
-
-Look through the code for `live_sniper.py` and `html_verifier.py` for any path changes (replace `*` with your local username).
+Both Python scripts automatically detect your home directory using `Path.home()`, so no manual path editing is required.
 
 ### Phase 3: Autonomous Execution
 
@@ -143,14 +130,14 @@ This command sets the verifier to run automatically at 11:50 PM every night to s
 crontab -e
 
 # Add this line to the very bottom on a new line without a # in front of it
-# replace * with your local username
-
-50 23 * * * /home/*/CertStream-CryptoScamMonitor/.venv/bin/python /home/*/CertStream-CryptoScamMonitor/scripts/html_verifier.py >> /home/*/scam_logs/verifier_cron.log 2>&1
+50 23 * * * $HOME/CertStream-CryptoScamMonitor/.venv/bin/python $HOME/CertStream-CryptoScamMonitor/scripts/html_verifier.py >> $HOME/scam_logs/verifier_cron.log 2>&1
 ```
+
+> **Note:** `cron` expands `$HOME` automatically. Do not use `~` in crontab entries — it is not expanded by cron.
 
 ## Log Management
 
-Your Raspberry Pi will now operate completely headless. Check your /home/*/scam_logs/ directory daily for two files:
+Your Raspberry Pi will now operate completely headless. Both scripts automatically create and write to `~/scam_logs/`. Check this directory daily for two files:
 
 `targets_YYYY-MM-DD.txt`: The raw suspicious domains caught by the WebSocket.
 

@@ -5,7 +5,11 @@ import json
 import datetime
 import time
 import re
+from pathlib import Path
 from zoneinfo import ZoneInfo
+
+LOG_DIR = Path.home() / "scam_logs"
+LOG_DIR.mkdir(exist_ok=True)
 
 # pointing at the server running certstream firehose
 CERTSTREAM_URL = "ws://127.0.0.1:8080/"
@@ -91,8 +95,7 @@ def on_message(ws, message):
                 today = datetime.datetime.now(tz=ZoneInfo("US/Central")).strftime(
                     "%Y-%m-%d"
                 )
-                # replace * with your local username
-                daily_filename = f"/home/*/scam_logs/targets_{today}.txt"
+                daily_filename = LOG_DIR / f"targets_{today}.txt"
 
                 print(f"\n[*] Target Locked: {strict_url}")
                 with open(daily_filename, "a") as file:
@@ -117,7 +120,7 @@ def on_open(ws):
 if __name__ == "__main__":
     # load today's targets into seen_urls so restarts don't produce duplicates
     today = datetime.datetime.now(tz=ZoneInfo("US/Central")).strftime("%Y-%m-%d")
-    daily_filename = f"/home/*/scam_logs/targets_{today}.txt"
+    daily_filename = LOG_DIR / f"targets_{today}.txt"
     if os.path.exists(daily_filename):
         with open(daily_filename, "r") as f:
             for line in f:

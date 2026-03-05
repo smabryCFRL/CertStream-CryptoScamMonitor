@@ -1,4 +1,3 @@
-# REPLACE THE * WITH YOUR LOCAL PI's USERNAME
 import os
 import sys
 import requests
@@ -33,9 +32,11 @@ PROXIES = {
 print("[+] Proxy configured.")
 
 # daily logging - makes a new file every day
+LOG_DIR = Path.home() / "scam_logs"
+LOG_DIR.mkdir(exist_ok=True)
 today = datetime.datetime.now(tz=ZoneInfo("US/Central")).strftime("%Y-%m-%d")
-INPUT_FILE = f"/home/*/scam_logs/targets_{today}.txt"
-OUTPUT_FILE = f"/home/*/scam_logs/confirmed_{today}.txt"
+INPUT_FILE = LOG_DIR / f"targets_{today}.txt"
+OUTPUT_FILE = LOG_DIR / f"confirmed_{today}.txt"
 
 # using Regex is better than for loops for keyword detection in most cases
 # since it compiles to C and runs in O(n) time - \b ensures we only match whole words
