@@ -92,7 +92,9 @@ def check_html_and_save(target):
             strict_url,
             timeout=(10, 15),
             verify=False,
-            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"},
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            },
             stream=True,
             proxies=PROXIES,
             allow_redirects=True,
@@ -176,8 +178,12 @@ if __name__ == "__main__":
                     print(f"[!!!] Worker thread crashed: {e}", flush=True)
 
         failed = len(new_targets) - sites_reached
-        print(f"\n[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}.")
-        print(f"[*] Reachable: {sites_reached}/{len(new_targets)} | Unreachable: {failed}")
+        print(
+            f"\n[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}."
+        )
+        print(
+            f"[*] Reachable: {sites_reached}/{len(new_targets)} | Unreachable: {failed}"
+        )
 
         if sites_reached > 0:
             hit_rate = (len(active_threats) / sites_reached) * 100
