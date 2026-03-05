@@ -185,6 +185,15 @@ def check_html_and_save(target):
             js_shell_only += 1
             return
 
+        # gambling exclusion — if page is about casino/gambling, skip it
+        GAMBLING_REGEX = re.compile(
+            r"\b(casino|slot\s*machine|slots|poker|blackjack|roulette|baccarat|jackpot|free\s*spins|no\s*deposit\s*bonus)\b",
+            re.IGNORECASE,
+        )
+        gambling_hits = len(set(GAMBLING_REGEX.findall(html_body)))
+        if gambling_hits >= 2:
+            return
+
         crypto_hits = len(set(CRYPTO_REGEX.findall(html_body)))
         hyip_hits = len(set(HYIP_REGEX.findall(html_body)))
         roi_plan_hits = len(set(ROI_PLAN_REGEX.findall(html_body)))
