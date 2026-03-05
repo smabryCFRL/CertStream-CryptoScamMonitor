@@ -153,7 +153,9 @@ def check_html_and_save(target):
             return
 
         # detect JS-only shells (SPA sites that need rendering)
-        visible_text = re.sub(r"<script[^>]*>.*?</script>", "", html_body, flags=re.DOTALL)
+        visible_text = re.sub(
+            r"<script[^>]*>.*?</script>", "", html_body, flags=re.DOTALL
+        )
         visible_text = re.sub(r"<[^>]+>", "", visible_text).strip()
         if len(visible_text) < 100 and JS_SHELL_INDICATORS.search(html_body):
             js_shell_only += 1
@@ -231,28 +233,30 @@ if __name__ == "__main__":
         dead = len(new_targets) - sites_alive
         analyzed = sites_reached - api_errors - empty_html - js_shell_only
 
-        print(f"\n{'='*50}")
+        print(f"\n{'=' * 50}")
         print(f"  SCAN RESULTS — {today}")
-        print(f"{'='*50}")
+        print(f"{'=' * 50}")
         print(f"  Total targets:     {len(new_targets)}")
         print(f"  TCP alive:         {sites_alive}")
         print(f"  TCP dead:          {dead}")
-        print(f"{'='*50}")
+        print(f"{'=' * 50}")
         print(f"  API calls made:    {sites_reached}")
         print(f"  API errors (4xx):  {api_errors}")
         print(f"  Empty/no HTML:     {empty_html}")
         print(f"  JS shell only:     {js_shell_only}")
         print(f"  Fully analyzed:    {analyzed}")
-        print(f"{'='*50}")
+        print(f"{'=' * 50}")
         print(f"  Had crypto keywords: {has_crypto}")
         print(f"  Had HYIP phrases:    {has_hyip}")
         print(f"  Had structure sigs:  {has_structure}")
         print(f"  CONFIRMED SCAMS:     {len(active_threats)}")
-        print(f"{'='*50}")
+        print(f"{'=' * 50}")
 
         if analyzed > 0:
             hit_rate = (len(active_threats) / analyzed) * 100
-            print(f"  Hit Rate (of analyzed): {hit_rate:.2f}% ({len(active_threats)}/{analyzed})")
+            print(
+                f"  Hit Rate (of analyzed): {hit_rate:.2f}% ({len(active_threats)}/{analyzed})"
+            )
         else:
             print("  Hit Rate: N/A (0 sites analyzed)")
 
