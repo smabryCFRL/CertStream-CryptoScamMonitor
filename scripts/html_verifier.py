@@ -63,7 +63,7 @@ active_threats = []
 seen_urls = set()
 write_lock = threading.Lock()
 consecutive_failures = 0
-MAX_CONSECUTIVE_FAILURES = 10
+MAX_CONSECUTIVE_FAILURES = 50
 
 # preload files into memory to avoid re-reading the same file multiple times during execution
 if os.path.exists(OUTPUT_FILE):
@@ -90,7 +90,7 @@ def check_html_and_save(target):
         # stream=True defers body download; we read only the first chunk below and then stop
         response = requests.get(
             strict_url,
-            timeout=(3, 5),
+            timeout=(10, 15),
             verify=False,
             headers={"User-Agent": "Mozilla/5.0"},
             stream=True,
