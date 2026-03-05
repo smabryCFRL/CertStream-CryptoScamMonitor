@@ -172,7 +172,7 @@ if __name__ == "__main__":
         new_targets = [t for t in targets if normalize_url(t) not in seen_urls]
 
         print(f"[*] Loaded {len(seen_urls)} already confirmed scams.")
-        print(f"[*] Scanning {len(new_targets)} NEW targets from today's log...\n")
+        print(f"[*] Scanning {len(new_targets)} NEW targets from {today} log...\n")
 
         with ThreadPoolExecutor(max_workers=20) as executor:
             futures = [executor.submit(check_html_and_save, t) for t in new_targets]
