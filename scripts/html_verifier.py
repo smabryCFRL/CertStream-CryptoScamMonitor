@@ -48,12 +48,33 @@ CRYPTO_REGEX = re.compile(
     r"\b(bitcoin|btc|ethereum|eth|usdt|tether|bnb|trx|tron|solana|litecoin|dogecoin|crypto|blockchain|mining|staking|defi|web3|wallet|token|hash|miner)\b"
 )
 HYIP_REGEX = re.compile(
-    r"\b(daily\s+roi|investment\s+plan|guaranteed\s+profit|passive\s+income|earn\s+daily|referral\s+bonus|minimum\s+deposit|instant\s+withdrawal|compound\s+interest|high\s+yield|roi\s+calculator|deposit\s+now|start\s+earning|join\s+now\s+and\s+earn|guaranteed\s+return|forex\s+trading|copy\s+trading|auto\s+trading)\b"
+    r"\b(daily\s+roi|investment\s+plan|guaranteed\s+profit|passive\s+income|earn\s+daily|referral\s+bonus|minimum\s+deposit|instant\s+withdrawal|compound\s+interest|high\s+yield|roi\s+calculator|deposit\s+now|start\s+earning|join\s+now\s+and\s+earn|guaranteed\s+return|forex\s+trading|copy\s+trading|auto\s+trading)\b",
+    re.IGNORECASE,
+)
+
+# fraudulent ROI promises — percentage returns tied to short timeframes
+ROI_PLAN_REGEX = re.compile(
+    r"(\d+\.?\d*\s*%\s*(?:after|in|within|per|every)\s*\d+\s*(?:hour|day|week|month)s?"
+    r"|\b(?:our\s+)?(?:investment\s+)?plans?\b.*?\d+\s*%"
+    r"|\b(?:available\s+stocks?|feature\s+deals?|our\s+packages?|pricing\s+plans?)\b"
+    r"|\bbecome\s+(?:our\s+)?(?:shareholder|investor)\b"
+    r"|\bopen\s+amount|end\s+amount|min(?:imum)?\s*(?:deposit|invest)"
+    r"|\$\s*\d+[.\s]*(?:[-–—~to]+|\.{2,})\s*\$?\s*\d+"
+    r"|\b\d+\.?\d*\s*%\s*(?:daily|hourly|weekly|monthly)\b"
+    r"|\b(?:profit|return|roi|earning)s?\s*(?:up\s+to|of)?\s*\d+\s*%"
+    r")",
+    re.IGNORECASE,
+)
+
+# single-word scam action terms — lightweight signals
+SCAM_ACTION_REGEX = re.compile(
+    r"\b(deposit|withdraw|withdrawal|airdrop|claim|earn|invest|investor|shareholder|referral|bonus|payout|cashout|roi|dividend|yield|compound|reinvest)\b",
+    re.IGNORECASE,
 )
 
 # structural signals — HYIP template DNA detectable from raw HTML
 SCAM_STRUCTURE_REGEX = re.compile(
-    r'(class=["\'](?:plan-card|pricing-table|investment-box|deposit-form)["\']'
+    r'(class=["\'](?:plan-card|pricing-table|investment-box|deposit-form|pricing-box|plan-box)["\']'
     r"|<select[^>]*(?:coin|currency|crypto)[^>]*>"
     r"|<input[^>]*(?:deposit|invest|amount)[^>]*>"
     r"|\b(?:200%|300%|500%|1000%)\s*(?:roi|return|profit)"
@@ -73,6 +94,8 @@ empty_html = 0
 js_shell_only = 0
 has_crypto = 0
 has_hyip = 0
+has_roi_plan = 0
+has_scam_action = 0
 has_structure = 0
 near_misses = []
 
@@ -163,12 +186,18 @@ def check_html_and_save(target):
 
         crypto_hits = len(set(CRYPTO_REGEX.findall(html_body)))
         hyip_hits = len(set(HYIP_REGEX.findall(html_body)))
+        roi_plan_hits = len(set(ROI_PLAN_REGEX.findall(html_body)))
+        scam_action_hits = len(set(SCAM_ACTION_REGEX.findall(html_body)))
         structure_hits = len(set(SCAM_STRUCTURE_REGEX.findall(html_body)))
 
         if crypto_hits:
             has_crypto += 1
         if hyip_hits:
             has_hyip += 1
+        if roi_plan_hits:
+            has_roi_plan += 1
+        if scam_action_hits:
+            has_scam_action += 1
         if structure_hits:
             has_structure += 1
 
@@ -181,10 +210,19 @@ def check_html_and_save(target):
             title and CRYPTO_REGEX.search(title) and HYIP_REGEX.search(title)
         )
 
-        # confirmation: original rule, OR structural assist, OR title match
+        # confirmation logic — multiple paths to detect scam investment sites:
         confirmed = (
+            # original: crypto + strong HYIP language
             (crypto_hits >= 1 and hyip_hits >= 2)
+            # crypto + HYIP + structural template
             or (crypto_hits >= 1 and hyip_hits >= 1 and structure_hits >= 1)
+            # ROI plan cards with percentage-timeframe promises (highest confidence signal)
+            or (roi_plan_hits >= 2)
+            # crypto + ROI plan language
+            or (crypto_hits >= 1 and roi_plan_hits >= 1)
+            # crypto + multiple scam actions + structural signals (e.g. deposit forms)
+            or (crypto_hits >= 1 and scam_action_hits >= 3 and structure_hits >= 1)
+            # title tag match
             or title_confirmed
         )
 
@@ -196,10 +234,10 @@ def check_html_and_save(target):
                     file.write(f"{strict_url}\n")
                 active_threats.append(strict_url)
                 seen_urls.add(strict_url)
-        elif crypto_hits >= 1 or hyip_hits >= 1:
+        elif crypto_hits >= 1 or hyip_hits >= 1 or roi_plan_hits >= 1:
             with write_lock:
                 near_misses.append(
-                    f"  {strict_url} (crypto={crypto_hits} hyip={hyip_hits} struct={structure_hits})"
+                    f"  {strict_url} (crypto={crypto_hits} hyip={hyip_hits} roi={roi_plan_hits} action={scam_action_hits} struct={structure_hits})"
                 )
 
     except requests.RequestException as e:
@@ -222,7 +260,7 @@ if __name__ == "__main__":
 
         # Phase 1: TCP liveness filter (fast, free, 50 threads)
         print("[*] Phase 1: TCP liveness check...")
-        with ThreadPoolExecutor(max_workers=50) as executor:
+        with ThreadPoolExecutor(max_workers=20) as executor:
             futures = [executor.submit(check_html_and_save, t) for t in new_targets]
             for future in as_completed(futures):
                 try:
@@ -248,6 +286,8 @@ if __name__ == "__main__":
         print(f"{'=' * 50}")
         print(f"  Had crypto keywords: {has_crypto}")
         print(f"  Had HYIP phrases:    {has_hyip}")
+        print(f"  Had ROI/plan sigs:   {has_roi_plan}")
+        print(f"  Had scam actions:    {has_scam_action}")
         print(f"  Had structure sigs:  {has_structure}")
         print(f"  CONFIRMED SCAMS:     {len(active_threats)}")
         print(f"{'=' * 50}")
