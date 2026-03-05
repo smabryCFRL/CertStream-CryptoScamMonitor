@@ -63,6 +63,7 @@ active_threats = []
 seen_urls = set()
 write_lock = threading.Lock()
 consecutive_failures = 0
+sites_reached = 0
 MAX_CONSECUTIVE_FAILURES = 50
 
 # preload files into memory to avoid re-reading the same file multiple times during execution
@@ -81,23 +82,24 @@ def normalize_url(target):
 
 
 def check_html_and_save(target):
-    global consecutive_failures
+    global consecutive_failures, sites_reached
     strict_url = normalize_url(target)
     if strict_url in seen_urls:
         return
 
     try:
-        # stream=True defers body download; we read only the first chunk below and then stop
         response = requests.get(
             strict_url,
             timeout=(10, 15),
             verify=False,
-            headers={"User-Agent": "Mozilla/5.0"},
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"},
             stream=True,
             proxies=PROXIES,
+            allow_redirects=True,
         )
 
         try:
+            sites_reached += 1
             if response.status_code != 200:
                 return
 
@@ -173,17 +175,17 @@ if __name__ == "__main__":
                 except Exception as e:
                     print(f"[!!!] Worker thread crashed: {e}", flush=True)
 
-        print(
-            f"\n[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}."
-        )
+        failed = len(new_targets) - sites_reached
+        print(f"\n[+] Complete! Added {len(active_threats)} NEW scams to {OUTPUT_FILE}.")
+        print(f"[*] Reachable: {sites_reached}/{len(new_targets)} | Unreachable: {failed}")
 
-        if len(new_targets) > 0:
-            hit_rate = (len(active_threats) / len(new_targets)) * 100
+        if sites_reached > 0:
+            hit_rate = (len(active_threats) / sites_reached) * 100
             print(
-                f"[*] Session Hit Rate: {hit_rate:.2f}% ({len(active_threats)}/{len(new_targets)} scanned)"
+                f"[*] Hit Rate (of reachable): {hit_rate:.2f}% ({len(active_threats)}/{sites_reached})"
             )
         else:
-            print("[*] Session Hit Rate: N/A (0 new targets scanned)")
+            print("[*] Hit Rate: N/A (0 sites reachable)")
 
     except KeyboardInterrupt:
         print("\n[*] Interrupted by user. Exiting.")
