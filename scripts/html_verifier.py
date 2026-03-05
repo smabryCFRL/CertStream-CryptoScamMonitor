@@ -32,9 +32,10 @@ PROXIES = {
 print("[+] Proxy configured.")
 
 # daily logging - makes a new file every day
+# optional: pass a date like `python html_verifier.py 2026-03-04` to scan a specific day
 LOG_DIR = Path.home() / "scam_logs"
 LOG_DIR.mkdir(exist_ok=True)
-today = datetime.datetime.now(tz=ZoneInfo("US/Central")).strftime("%Y-%m-%d")
+today = sys.argv[1] if len(sys.argv) > 1 else datetime.datetime.now(tz=ZoneInfo("US/Central")).strftime("%Y-%m-%d")
 INPUT_FILE = LOG_DIR / f"targets_{today}.txt"
 OUTPUT_FILE = LOG_DIR / f"confirmed_{today}.txt"
 
