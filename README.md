@@ -12,13 +12,13 @@ By running a local CertStream server natively, this architecture completely bypa
 
 1. **The Firehose (`certstream-server-go`):** Runs as a background `systemd` daemon, pulling raw SSL/TLS certificate registrations from public Certificate Transparency logs into the Pi's memory.
 2. **The Live Sniper (`live_sniper.py`):** A Python WebSocket client running persistently in `tmux`. It connects to the local Firehose (127.0.0.1), applies strict intersection filtering to catch crypto-scam domains, and logs them dynamically by date. Auto-reconnects on disconnection — no manual restart needed.
-3. **The Deep Verifier (`html_verifier.py`):** An automated Python scanner triggered by `cron` at 11:50 PM daily. It visits the day's suspect domains through a residential proxy, analyzes their raw HTML for specific scam footprints (HYIP templates, structural signals, title tags), and outputs verified, actionable targets.
+3. **The Deep Verifier (`html_verifier.py`):** An automated two-phase scanner triggered by `cron` at 11:50 PM daily. Phase 1 runs a free TCP liveness check to filter out dead domains. Phase 2 sends survivors to the Decodo Web Scraping API, which handles Cloudflare bypass, anti-bot, and JS rendering server-side. The returned HTML is analyzed locally for scam footprints (HYIP templates, structural signals, title tags) and confirmed threats are logged.
 
 ## Prerequisites & Hardware
 * **Hardware:** Raspberry Pi (Tested on ARM64/ARMv7) with a stable internet connection.
 * **OS:** Debian/Raspberry Pi OS.
 * **Dependencies:** Python 3.9+, `tmux`, `systemd`.
-* **Proxy:** A residential proxy (e.g., Decodo/SmartProxy) with IP whitelisting for the HTML verifier.
+* **Scraping API:** A [Decodo Web Scraping API](https://decodo.com/scraping/web) subscription (Core plan, ~$0.08/1k requests) for the HTML verifier.
 
 ---
 
@@ -88,22 +88,23 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**2. Configure the proxy:**
+**2. Configure the Decodo Scraping API:**
 
-The HTML verifier routes all requests through a residential proxy to avoid exposing your Pi's IP to scam domains. Note: only `html_verifier.py` uses the proxy — `live_sniper.py` connects to the local CertStream server and does not require proxy configuration.
+The HTML verifier uses the Decodo Web Scraping API to fetch pages through Cloudflare and anti-bot protections. Note: only `html_verifier.py` uses the API — `live_sniper.py` connects to the local CertStream server and does not require it.
 
-Copy the example and fill in your proxy details:
+1. Sign up for the [Decodo Web Scraping API](https://decodo.com/scraping/web) Core plan.
+2. Go to your dashboard → **Scraper** tab → copy your **Basic auth token**.
+3. Create the `.env` file:
 
 ```bash
 cp .env.example .env
 nano .env
 ```
 
-Set your proxy host and port (IP must be whitelisted on the provider's dashboard):
+Paste your token:
 
 ```
-PROXY_HOST=gate.your-proxy-provider.com
-PROXY_PORT=10001
+SCRAPER_TOKEN=your_base64_auth_token_here
 ```
 
 Both Python scripts automatically detect your home directory using `Path.home()`, so no manual path editing is required.
